@@ -65,6 +65,9 @@ public class historyController {
         newVBox.setPadding(new Insets(10, 10, 10, 10)); // Keep consistent padding
         VBox.setMargin(newVBox, new Insets(10, 8, 10, 8)); // Adjusted side margins to fit 260 total
 
+
+
+
         // Create the HBox
         HBox hbox = new HBox();
         hbox.setPrefHeight(68.0);

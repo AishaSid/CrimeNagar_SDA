@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.MissingController">
+
+    <!-- Back Button -->
+    <!-- Single VBox for dynamic content -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+      <VBox prefHeight="41.0" prefWidth="96.0">
+         <children>
+            <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#onBackButtonClicked" style="-fx-background-color: transparent;" text="←">
+               <font>
+                  <Font name="Cambria Bold" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+        <!-- Default content is the Login Form -->
+        <Label fx:id="titleLabel" prefHeight="38.0" prefWidth="179.0" style="-fx-font-size: 18px; -fx-text-fill: #4A4A4A;" text="Missing Person Report">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <TextField fx:id="fullname" prefHeight="40.0" prefWidth="159.0" promptText="Full name " style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="age" prefWidth="300.0" promptText="Age" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="lastlocation" prefWidth="300.0" promptText="Last Location" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="whenField" prefWidth="300.0" promptText="Describe when you saw them last time " style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="phoneField" prefHeight="40.0" prefWidth="159.0" promptText="Your Contact Number" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <HBox prefHeight="43.0" prefWidth="360.0">
+            <children>
+                <Button onAction="#insertImage" prefHeight="43.0" prefWidth="246.0" style="-fx-background-color: transparent;" text="Insert Image of Missing Person" />
+                <ImageView fx:id="imageView" fitHeight="37.0" fitWidth="41.0" preserveRatio="true" />
+            </children>
+        </HBox>
+        <ComboBox fx:id="relationComboBox" prefHeight="37.0" prefWidth="367.0" promptText="What is your Relation with the missing person?" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" visibleRowCount="6">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Parent" />
+                    <String fx:value="Family Relative" />
+                    <String fx:value="Sibling" />
+                    <String fx:value="Friend" />
+                    <String fx:value="Neighbour/Other" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <Button fx:id="submitButton" contentDisplay="TOP" onAction="#handleSubmitButtonAction" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Submit Report" />
+        <Label fx:id="showerror" prefHeight="17.0" prefWidth="391.0" text="ccdgggg" textFill="WHITE" />
+    </VBox>
+</StackPane>

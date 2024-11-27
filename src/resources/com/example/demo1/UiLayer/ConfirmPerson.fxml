@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.CPController">
+
+    <!-- Single VBox for dynamic content -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+        <!-- Default content is the Login Form -->
+        <Label fx:id="titleLabel" style="-fx-font-size: 18px; -fx-text-fill: #4A4A4A;" text="Confirm Missing Person">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+      <HBox alignment="CENTER" prefHeight="85.0" prefWidth="360.0">
+         <children>
+            <Label fx:id="fullname" alignment="CENTER" contentDisplay="CENTER" prefHeight="53.0" prefWidth="197.0" text="Mikamaru">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imageView1" fitHeight="131.0" fitWidth="187.0" preserveRatio="true" />
+         </children>
+      </HBox>
+      <Label text="Person Description" />
+      <TextArea fx:id="PersonDescription" maxHeight="1.7976931348623157E308" prefHeight="96.0" prefWidth="360.0" style="-fx-background-color: #f9f9f9; -fx-border-color: transparent;" text="a 13 year old boy with brown hair, playing in the ground around 5:30 pm a 13 year old boy with brown hair, playing in the ground around 5:30 pm a 13 year old boy with brown hair, playing in the ground around 5:30 pm  " wrapText="true" />
+        <TextField fx:id="wherefoundField" prefWidth="300.0" promptText="Where were they found?" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="conditionfoundField" prefWidth="300.0" promptText="Describe the condition of the person when found" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="reasonField" prefHeight="40.0" prefWidth="159.0" promptText="Why were they missing ?" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <HBox prefHeight="43.0" prefWidth="360.0">
+            <children>
+                <Button onAction="#insertImage" prefHeight="53.0" prefWidth="237.0" style="-fx-background-color: transparent;" text="Upload Image of Person Found " />
+                <ImageView fx:id="imageView" fitHeight="50.0" fitWidth="123.0" preserveRatio="true" />
+            </children>
+        </HBox>
+        <Button fx:id="submitButton" contentDisplay="TOP" onAction="#handleSubmitButtonAction" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Confirm Found" />
+    </VBox>
+    <Button fx:id="backButton" onAction="#onBackButtonClicked" alignment="CENTER" layoutX="-2.0" style="-fx-background-color: transparent;" text="🡸" StackPane.alignment="TOP_LEFT">
+        <font>
+            <Font name="Cambria" size="22.0" />
+        </font>
+    </Button>
+</StackPane>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.ComboBox?>
+<StackPane alignment="CENTER" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.ShowMPController">
+
+    <!-- Back Button -->
+    <!-- Single VBox for dynamic content -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+        <VBox prefHeight="41.0" prefWidth="96.0">
+            <children>
+                <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#onBackButtonClicked" style="-fx-background-color: transparent;" text="←">
+                    <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <HBox prefHeight="43.0" prefWidth="360.0">
+            <children>
+              <!-- Default content is the Login Form -->
+              <Label fx:id="titleLabel" alignment="CENTER" prefHeight="141.0" prefWidth="179.0" style="-fx-font-size: 18px; -fx-text-fill: #4A4A4A;" text="Missing Person">
+                  <font>
+                      <Font name="System Bold" size="12.0" />
+                  </font>
+              </Label>
+                <ImageView fx:id="imageView" fitHeight="147.0" fitWidth="176.0" preserveRatio="true" />
+            </children>
+        </HBox>
+      <HBox prefHeight="40.0" prefWidth="360.0">
+         <children>
+              <TextField fx:id="fullname" editable="false" prefHeight="40.0" prefWidth="218.0" promptText="Full name " style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </TextField>
+              <TextField fx:id="age" editable="false" prefHeight="40.0" prefWidth="150.0" promptText="age" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+        <ComboBox fx:id="lastlocation" prefWidth="300.0" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+        <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="F-5" />
+                    <String fx:value="F-6" />
+                    <String fx:value="F-7" />
+                    <String fx:value="F-8" />
+                    <String fx:value="F-9" />
+                    <String fx:value="F-10" />
+                    <String fx:value="F-11" />
+                    <String fx:value="F-12" />
+                    <String fx:value="F-13" />
+                    <String fx:value="G-5" />
+                    <String fx:value="G-6" />
+                    <String fx:value="G-7" />
+                    <String fx:value="G-8" />
+                    <String fx:value="G-9" />
+                    <String fx:value="G-10" />
+                    <String fx:value="G-11" />
+                    <String fx:value="G-12" />
+                    <String fx:value="G-13" />
+                    <String fx:value="G-14" />
+                    <String fx:value="H-8" />
+                    <String fx:value="H-9" />
+                    <String fx:value="H-10" />
+                    <String fx:value="H-11" />
+                    <String fx:value="H-12" />
+                    <String fx:value="I-8" />
+                    <String fx:value="I-9" />
+                    <String fx:value="I-10" />
+                    <String fx:value="I-11" />
+                    <String fx:value="I-12" />
+                    <String fx:value="I-13" />
+                    <String fx:value="I-14" />
+                    <String fx:value="I-15" />
+                    <String fx:value="I-16" />
+                    <String fx:value="Blue Area" />
+                    <String fx:value="Diplomatic Enclave" />
+                    <String fx:value="Bahria Town" />
+                    <String fx:value="DHA" />
+                    <String fx:value="E-11" />
+                    <String fx:value="Fazaia Colony" />
+                    <String fx:value="Margalla Town" />
+                    <String fx:value="Shakarparian" />
+                    <String fx:value="Rawal Town" />
+                    <String fx:value="Golra" />
+                    <String fx:value="Tarnol" />
+                    <String fx:value="Bara Kahu" />
+                    <String fx:value="Bhara Kahu" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+        <TextField fx:id="whenField" editable="false" prefWidth="300.0" promptText="Describe when you saw them last time " style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <TextField fx:id="phoneField" editable="false" prefHeight="40.0" prefWidth="159.0" promptText="Your Contact Number" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+      <TextField fx:id="relation" editable="false" prefHeight="40.0" prefWidth="159.0" promptText="relation" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="45.0" prefWidth="116.0" style="-fx-text-fill: #4A4A4A;" text="Status : ">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <TextField fx:id="status" editable="false" prefHeight="40.0" prefWidth="243.0" promptText="status" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+         </children>
+      </HBox>
+        <Label fx:id="showerror" prefHeight="17.0" prefWidth="391.0" text="ccdgggg" textFill="WHITE" />
+    </VBox>
+</StackPane>

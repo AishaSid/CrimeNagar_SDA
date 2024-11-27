@@ -1,0 +1,42 @@
+/* Global Styles */
+* {
+    -fx-font-family: "Arial", sans-serif;
+    -fx-font-size: 14px;
+}
+
+/* Button Styling */
+.button {
+    -fx-background-color: #334155;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-font-size: 16px;
+}
+
+.button:hover {
+    -fx-background-color: #1e293b;
+}
+
+/* Top Navigation */
+.hbox {
+    -fx-background-color: #1e293b;
+    -fx-padding: 10;
+    -fx-alignment: center;
+}
+
+/* Bottom Navigation */
+.hbox.bottom-nav {
+    -fx-background-color: #1e293b;
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-spacing: 15;
+}
+
+/* Main Content Area */
+.vbox.main-content {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 20;
+    -fx-spacing: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4);
+}

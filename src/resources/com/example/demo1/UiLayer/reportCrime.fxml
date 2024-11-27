@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.ReportCrimeController">
+
+    <!-- Back Button -->
+
+    <!-- Report Crime Form -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+        <VBox prefHeight="41.0" prefWidth="233.0">
+            <children>
+                <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="40.0" prefWidth="52.0" style="-fx-background-color: transparent;" text="←">
+                    <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <Label text="Report Crime">
+            <font>
+                <Font name="Times New Roman Bold" size="50.0" />
+            </font>
+        </Label>
+
+        <!-- Crime Type Selection -->
+        <ComboBox fx:id="crimeTypeComboBox" prefWidth="300.0" promptText="Select Crime Type" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Theft" />
+                    <String fx:value="Assault" />
+                    <String fx:value="Vandalism" />
+                    <String fx:value="Burglary" />
+                    <String fx:value="Fraud" />
+                    <String fx:value="Robbery" />
+                    <String fx:value="Kidnapping" />
+                    <String fx:value="Murder" />
+                    <String fx:value="Cybercrime" />
+                    <String fx:value="Drug Possession" />
+                    <String fx:value="Arson" />
+                    <String fx:value="Domestic Violence" />
+                    <String fx:value="Homicide" />
+                    <String fx:value="Smuggling" />
+                    <String fx:value="Vehicle Theft" />
+                    <String fx:value="Public Disturbance" />
+                    <String fx:value="Pickpocketing" />
+                    <String fx:value="Road Accident" />
+                    <String fx:value="Trespassing" />
+                    <String fx:value="Stalking" />
+                    <String fx:value="Harassment" />
+                    <String fx:value="Carjacking" />
+                    <String fx:value="Extortion" />
+                    <String fx:value="Forgery" />
+                    <String fx:value="Terrorism" />
+                    <String fx:value="Illegal Weapons" />
+                    <String fx:value="Hate Speech" />
+                    <String fx:value="Other" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Police Department Selection -->
+        <ComboBox fx:id="policeStationComboBox" prefWidth="300.0" promptText="Select Police Station" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="F-6 Police Station" />
+                    <String fx:value="F-7 Police Station" />
+                    <String fx:value="G-9 Police Station" />
+                    <String fx:value="I-9 Police Station" />
+                    <String fx:value="Blue Area Police Station" />
+                    <String fx:value="Shahzad Town Police Station" />
+                    <String fx:value="Aabpara Police Station" />
+                    <String fx:value="Margalla Police Station" />
+                    <String fx:value="Golra Police Station" />
+                    <String fx:value="Industrial Area Police Station" />
+                    <String fx:value="Shalimar Police Station" />
+                    <String fx:value="Secretariat Police Station" />
+                    <String fx:value="Tarnol Police Station" />
+                    <String fx:value="Bhara Kahu Police Station" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Crime Description -->
+        <TextField fx:id="crimeDescription" prefWidth="300.0" promptText="Describe the crime" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+
+        <!-- Crime Location (Dropdown) -->
+        <ComboBox fx:id="crimeLocationComboBox" prefWidth="300.0" promptText="Select Location" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="F-5" />
+                    <String fx:value="F-6" />
+                    <String fx:value="F-7" />
+                    <String fx:value="F-8" />
+                    <String fx:value="F-9" />
+                    <String fx:value="F-10" />
+                    <String fx:value="F-11" />
+                    <String fx:value="F-12" />
+                    <String fx:value="F-13" />
+                    <String fx:value="G-5" />
+                    <String fx:value="G-6" />
+                    <String fx:value="G-7" />
+                    <String fx:value="G-8" />
+                    <String fx:value="G-9" />
+                    <String fx:value="G-10" />
+                    <String fx:value="G-11" />
+                    <String fx:value="G-12" />
+                    <String fx:value="G-13" />
+                    <String fx:value="G-14" />
+                    <String fx:value="H-8" />
+                    <String fx:value="H-9" />
+                    <String fx:value="H-10" />
+                    <String fx:value="H-11" />
+                    <String fx:value="H-12" />
+                    <String fx:value="I-8" />
+                    <String fx:value="I-9" />
+                    <String fx:value="I-10" />
+                    <String fx:value="I-11" />
+                    <String fx:value="I-12" />
+                    <String fx:value="I-13" />
+                    <String fx:value="I-14" />
+                    <String fx:value="I-15" />
+                    <String fx:value="I-16" />
+                    <String fx:value="Blue Area" />
+                    <String fx:value="Diplomatic Enclave" />
+                    <String fx:value="Bahria Town" />
+                    <String fx:value="DHA" />
+                    <String fx:value="E-11" />
+                    <String fx:value="Fazaia Colony" />
+                    <String fx:value="Margalla Town" />
+                    <String fx:value="Shakarparian" />
+                    <String fx:value="Rawal Town" />
+                    <String fx:value="Golra" />
+                    <String fx:value="Tarnol" />
+                    <String fx:value="Bara Kahu" />
+                    <String fx:value="Bhara Kahu" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Crime Time -->
+        <DatePicker fx:id="crimeTime" prefWidth="300.0" promptText="Select Time of Crime" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+
+        <!-- Evidence Upload -->
+        <HBox prefHeight="43.0" prefWidth="360.0">
+            <children>
+                <Button alignment="CENTER" onAction="#insertCrimeEvidence" prefHeight="43.0" prefWidth="362.0" style="-fx-background-color: transparent;" text="Insert Evidence (Image)" textAlignment="CENTER">
+                    <font>
+                        <Font name="Times New Roman Bold" size="12.0" />
+                    </font></Button>
+                <ImageView fx:id="evidenceImageView" fitHeight="37.0" fitWidth="36.0" preserveRatio="true" />
+            </children>
+        </HBox>
+
+        <!-- Submit Button -->
+        <Button fx:id="submitReportButton" contentDisplay="TOP" onAction="#handleSubmitReport" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Submit Report" />
+    </VBox>
+</StackPane>

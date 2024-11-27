@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.LoginController">
+
+    <!-- Single VBox for dynamic content -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+      <Label fx:id="parameterLabel" style="-fx-text-fill: #4A4A4A;" text="Police Officer" textFill="#0d0d0d">
+         <font>
+            <Font name="Times New Roman Bold" size="40.0" />
+         </font>
+      </Label>
+        <!-- Default content is the Login Form -->
+        <Label fx:id="titleLabel" style="-fx-font-size: 18px; -fx-text-fill: #4A4A4A;" text="Login">
+         <font>
+            <Font name="Times New Roman Bold" size="33.0" />
+         </font></Label>
+        <TextField fx:id="usernameField" prefWidth="300.0" promptText="Username" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <PasswordField fx:id="passwordField" prefWidth="300.0" promptText="Password" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+        <Button fx:id="submitButton" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Login" />
+        <Label fx:id="switchLabel" style="-fx-text-fill: #4A4A4A;" text="Don't have an account?" />
+        <Hyperlink fx:id="switchLink" onAction="#switchToRegister" style="-fx-text-fill: #1a73e8;" text="Register here" />
+    </VBox>    <Button fx:id="backbtn" alignment="CENTER" layoutX="-2.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="60.0" prefWidth="57.0" style="-fx-background-color: transparent;" text="🡸" StackPane.alignment="TOP_LEFT">
+    <font>
+        <Font name="Cambria" size="22.0" />
+    </font>
+</Button></StackPane>

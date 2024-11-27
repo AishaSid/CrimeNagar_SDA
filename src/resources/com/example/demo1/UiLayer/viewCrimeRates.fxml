@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" prefHeight="600.0" prefWidth="400.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.CRController">
+    <children>
+        <AnchorPane fx:id="mainAnchorPane" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: white;">
+            <children>
+
+                <AnchorPane layoutX="29.0" layoutY="100.0" prefHeight="235.0" prefWidth="328.0">
+                    <children>
+                        <BarChart fx:id="barchart" layoutY="86.0" prefHeight="246.0" prefWidth="354.0" style="-fx-background-color: white;" styleClass="bar-chart" AnchorPane.bottomAnchor="-86.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="86.0">
+                            <xAxis>
+                                <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="yAxis" side="LEFT" upperBound="18.0">
+                                    <tickLabelFont>
+                                        <Font name="Times New Roman" size="12.0" />
+                                    </tickLabelFont>
+                                </NumberAxis>
+                            </yAxis>
+                        </BarChart>
+                        <Label layoutX="14.0" layoutY="36.0" text="Select Area ">
+                            <font>
+                                <Font name="Times New Roman" size="18.0" />
+                            </font>
+                        </Label>
+
+                        <ComboBox fx:id="areaComboBox" layoutX="101.0" layoutY="33.0" prefHeight="25.0" prefWidth="242.0" />
+
+                    </children>
+                </AnchorPane>
+
+                <Button fx:id="backButton" alignment="CENTER" layoutX="-2.0" mnemonicParsing="false" onAction="#onBackButtonClicked" style="-fx-background-color: transparent;" text="←" textFill="#111111" textOverrun="CLIP" AnchorPane.leftAnchor="-2.0" AnchorPane.topAnchor="0.0">
+                    <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                    </font>
+                </Button>
+
+                <Label layoutX="27.0" layoutY="41.0" prefHeight="25.0" prefWidth="347.0" text="View Crime Rates">
+                    <font>
+                        <Font name="Times New Roman" size="46.0" />
+                    </font>
+                </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>
+
+
+
+
+
+
+
+
+

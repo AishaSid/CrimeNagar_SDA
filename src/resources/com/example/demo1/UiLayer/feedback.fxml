@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: #f4f4f9;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.DashboardController">
+    <VBox alignment="center" spacing="20" style="-fx-background-color: #ffffff; -fx-background-radius: 10; -fx-padding: 20;">
+      <VBox prefHeight="9.0" prefWidth="518.0">
+         <children>
+            <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#goBackToDashboard" prefHeight="48.0" prefWidth="52.0" style="-fx-background-color: transparent;" text="←">
+               <font>
+                  <Font name="Cambria Bold" size="22.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <ImageView fitHeight="213.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../images/logo.png" />
+         </image>
+      </ImageView>
+      <Label text="Feedback">
+         <font>
+            <Font name="Times New Roman Bold" size="39.0" />
+         </font>
+      </Label>
+
+        <!-- Feedback Form -->
+        <VBox alignment="center" spacing="20" style="-fx-background-color: #ffffff; -fx-padding: 20; -fx-background-radius: 10;">
+            <TextArea fx:id="feedbackTextArea" prefHeight="150" promptText="Enter your feedback here..." style="-fx-background-color: #e2e8f0; -fx-background-radius: 5;" />
+         <Button fx:id="submitButton" contentDisplay="TOP" onAction="#submitFeedback" prefWidth="200.0" style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-background-radius: 15; -fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Submit Feedback" />
+        </VBox>
+    </VBox>
+</StackPane>

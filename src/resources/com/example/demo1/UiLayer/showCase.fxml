@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane alignment="CENTER" prefWidth="400.0" style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.ShowCase">
+
+    <!-- Back Button -->
+    <!-- Single VBox for dynamic content -->
+    <VBox fx:id="contentVBox" alignment="CENTER" prefHeight="600.0" prefWidth="400.0" spacing="15.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+        <VBox prefHeight="41.0" prefWidth="96.0">
+            <children>
+                <Button fx:id="backButton" alignment="CENTER" mnemonicParsing="false" onAction="#onBackButtonClicked" style="-fx-background-color: transparent;" text="←">
+                    <font>
+                        <Font name="Cambria Bold" size="22.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <HBox prefHeight="43.0" prefWidth="360.0">
+            <children>
+                <!-- Default content is the Login Form -->
+                <Label fx:id="type" alignment="CENTER" prefHeight="151.0" prefWidth="180.0" style="-fx-font-size: 18px; -fx-text-fill: #4A4A4A;" text="Case">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Label>
+                <ImageView fx:id="imageView" fitHeight="147.0" fitWidth="189.0" preserveRatio="true" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <TextField fx:id="loc1232" editable="false" prefHeight="40.0" prefWidth="370.0" promptText="location of incident" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <TextField fx:id="description" editable="false" prefHeight="40.0" prefWidth="386.0" promptText="no description" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="45.0" prefWidth="116.0" style="-fx-text-fill: #4A4A4A;" text="Officer:">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="officer" editable="false" prefHeight="40.0" prefWidth="346.0" promptText="no officer assigned" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="45.0" prefWidth="116.0" style="-fx-text-fill: #4A4A4A;" text="Department:">
+                    <font>
+                        <Font size="11.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="department" editable="false" prefHeight="40.0" prefWidth="331.0" promptText="no department" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+            </children>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <children>
+                <Label alignment="CENTER" prefHeight="45.0" prefWidth="116.0" style="-fx-text-fill: #4A4A4A;" text="Status : ">
+                    <font>
+                        <Font size="17.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="status" editable="false" prefHeight="40.0" prefWidth="243.0" promptText="status" style="-fx-background-color: #f9f9f9; -fx-background-radius: 10; -fx-padding: 10; -fx-border-color: #d1d9e6; -fx-border-radius: 10;" />
+            </children>
+        </HBox>
+        <Label fx:id="showerror" prefHeight="17.0" prefWidth="391.0" text="ccdgggg" textFill="WHITE" />
+    </VBox>
+</StackPane>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane style="-fx-background-color: linear-gradient(to bottom, #e8f0fe, #ffffff);" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.UiLayer.officerDashboardController">
+
+    <VBox fx:id="contentVBox" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="400.0" spacing="20.0" style="-fx-background-radius: 25; -fx-background-color: linear-gradient(to bottom right, #ffffff, #f0f4f8); -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 10, 0.3, 0, 4); -fx-padding: 20;">
+
+        <!-- Logo Section -->
+        <ImageView fitHeight="213.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../../images/logo.png" />
+            </image>
+        </ImageView>
+
+        <!-- Title Section -->
+        <HBox alignment="CENTER" prefHeight="85.0" prefWidth="400.0">
+            <children>
+                <Label text="Crime" textFill="#a72f2b">
+                    <font>
+                        <Font name="Times New Roman Bold" size="52.0" />
+                    </font>
+                </Label>
+                <Label text="Nagar" textFill="#1a73e8">
+                    <font>
+                        <Font name="Times New Roman Bold" size="54.0" />
+                    </font>
+                </Label>
+            </children>
+        </HBox>
+
+        <!-- Navigation Buttons -->
+        <VBox alignment="CENTER" spacing="15" style="-fx-padding: 20; -fx-background-radius: 15;">
+            <Button fx:id="confirmMissingPersonButton" onAction="#onConfirmMissingPersonClicked"
+                    style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 250; -fx-font-size: 14px; -fx-font-weight: bold;"
+                    text="Confirm Missing Person Found" />
+            <Button fx:id="acceptReportButton" onAction="#onAcceptReportClicked"
+                    style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 250; -fx-font-size: 14px; -fx-font-weight: bold;"
+                    text="Accept Report" />
+            <Button fx:id="updateCaseStatusButton" onAction="#onUpdateCaseStatusClicked"
+                    style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 250; -fx-font-size: 14px; -fx-font-weight: bold;"
+                    text="Update Case Status" />
+            <Button fx:id="viewReportStatsButton" onAction="#onViewReportStatsClicked"
+                    style="-fx-background-color: linear-gradient(to right, #6fb1fc, #1a73e8); -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 250; -fx-font-size: 14px; -fx-font-weight: bold;"
+                    text="View Report Stats" />
+            <Button fx:id="logoutButton" onAction="#onLogoutClicked" style="-fx-background-color: #dc2626; -fx-text-fill: white; -fx-background-radius: 15; -fx-pref-width: 250; -fx-font-size: 14px; -fx-font-weight: bold;" text="Logout" />
+
+        </VBox>
+
+    </VBox>
+</StackPane>

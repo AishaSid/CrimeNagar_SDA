@@ -60,39 +60,39 @@ public class historyController {
         // Create a new VBox
         VBox newVBox = new VBox();
         newVBox.setPrefHeight(68.0);
-        newVBox.setPrefWidth(347.0);
-        newVBox.setStyle("-fx-background-color: #FFFFFF; -fx-border-radius: 10; -fx-background-radius: 10;");
+        newVBox.setPrefWidth(244.0); // Adjusted to account for side margins
+        newVBox.setStyle("-fx-background-color: #e8e8e8; -fx-border-radius: 10; -fx-background-radius: 10;");
+        newVBox.setPadding(new Insets(10, 10, 10, 10)); // Keep consistent padding
+        VBox.setMargin(newVBox, new Insets(10, 8, 10, 8)); // Adjusted side margins to fit 260 total
 
         // Create the HBox
         HBox hbox = new HBox();
-        hbox.setPrefHeight(100.0);
-        hbox.setPrefWidth(300.0);
-        hbox.setStyle("-fx-alignment: center;");
+        hbox.setPrefHeight(68.0);
+        hbox.setPrefWidth(244.0); // Match VBox width for consistency
+        hbox.setStyle("-fx-alignment: center-left;");
 
-        // Add a Label for the name (e.g., "Report 1")
+        // Add a Label for the name
         Label nameLabel = new Label(name);
         nameLabel.setPrefHeight(26.0);
-        nameLabel.setPrefWidth(67.0);
-        nameLabel.setStyle("-fx-font-size: 14;");
-        HBox.setMargin(nameLabel, new Insets(0, 0, 0, 7.0)); // Add left margin
+        nameLabel.setPrefWidth(100.0);
+        nameLabel.setStyle("-fx-font-size: 14; -fx-text-fill: #333333;");
+        HBox.setMargin(nameLabel, new Insets(0, 10, 0, 0));
 
         // Add a spacer (Region)
         Region spacer = new Region();
-        spacer.setPrefHeight(42.0);
-        spacer.setPrefWidth(196.0);
         HBox.setHgrow(spacer, javafx.scene.layout.Priority.ALWAYS);
 
         // Add a Button for "Show"
         Button showButton = new Button("Show");
-        showButton.setStyle("-fx-background-color: transparent;");
+        showButton.setStyle("-fx-background-color: transparent; -fx-text-fill: #007BFF; -fx-font-size: 12;");
         showButton.setOnAction(e -> {
             try {
                 handleShowButtonClick(id, name);
             } catch (IOException ex) {
                 throw new RuntimeException(ex);
             }
-        }); // Set click event
-        HBox.setMargin(showButton, new Insets(0, 7.0, 0, 0)); // Add right margin
+        });
+        HBox.setMargin(showButton, new Insets(0, 0, 40, 10));
 
         // Add children to HBox
         hbox.getChildren().addAll(nameLabel, spacer, showButton);
@@ -100,9 +100,9 @@ public class historyController {
         // Add a Label for the description
         Label descriptionLabel = new Label(description);
         descriptionLabel.setWrapText(true);
-        descriptionLabel.setMaxWidth(Double.MAX_VALUE);
-        descriptionLabel.setStyle("-fx-padding: 3 10 3 10;"); // Padding: top, right, bottom, left
-        VBox.setMargin(descriptionLabel, new Insets(3.0, 3.0, 3.0, 10.0)); // Add margins
+        descriptionLabel.setMaxWidth(244.0);
+        descriptionLabel.setStyle("-fx-text-fill: #666666; -fx-font-size: 12;");
+        VBox.setMargin(descriptionLabel, new Insets(5, 0, 0, 0));
 
         // Add children to VBox
         newVBox.getChildren().addAll(hbox, descriptionLabel);

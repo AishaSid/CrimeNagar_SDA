@@ -22,11 +22,11 @@ public class officerDashboardController {
     private void onConfirmMissingPersonClicked() {
         try {
             // Load the Login FXML file
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ConfirmPerson.fxml"));
-            StackPane root = loader.load(); // Change to AnchorPane
-
-            CPController a = loader.getController();
-            a.receiveMessage(cnic);
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("updateStatus.fxml"));
+            AnchorPane root = loader.load(); // Change root type if needed
+            // Pass data to the next controller
+            UpdateCaseStatusController a = loader.getController();
+            a.receiveMessage(cnic,false);
             // Create a new scene with the login page and set it on the stage
             Stage stage = (Stage) confirmMissingPersonButton.getScene().getWindow();
             Scene scene = new Scene(root);
@@ -139,7 +139,7 @@ public class officerDashboardController {
                 // Pass data to the next controller
                 UpdateCaseStatusController controller = loader.getController();
                 if (controller != null) {
-                    controller.receiveMessage(cnic);
+                    controller.receiveMessage(cnic,true);
                 } else {
                     System.err.println("Controller is null!");
                 }

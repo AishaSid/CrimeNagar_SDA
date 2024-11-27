@@ -174,8 +174,9 @@ public class CPController {
 
     String cnic;
     int id = 1 ;
-    public void receiveMessage(String cnic)
+    public void receiveMessage(String cnic,int id)
     {
+        this.id = id;
         this.cnic = cnic;
         BLConnector c = new BLConnector();
         showData(c.showMP(id));

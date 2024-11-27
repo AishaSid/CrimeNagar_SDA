@@ -87,9 +87,9 @@ public class UiConnector
         return db.getReportsByCNIC(cnic);
     }
 
-    public String[][] getReportsByOfficerCNIC(String cnic)
+    public String[][] getReportsByOfficerCNIC(String cnic, boolean h)
     {
-        return db.getReportsByOfficerCNIC(cnic);
+        return db.getReportsByOfficerCNIC(cnic,h);
     }
 
 

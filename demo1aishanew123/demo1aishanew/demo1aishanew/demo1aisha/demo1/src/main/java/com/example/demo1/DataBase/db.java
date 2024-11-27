@@ -76,9 +76,9 @@ public class db
 
     public static Connection connectToDatabase() {
         Connection c = null;
-        String url = "jdbc:mysql://localhost:3306/a1";  // Replace with your DB URL
+        String url = "jdbc:mysql://localhost:3306/db";  // Replace with your DB URL
         String username = "root";
-        String password = "12345678";//"51ainah41";  // Replace with your DB password
+        String password = "51ainah41";//"51ainah41";  // Replace with your DB password
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -683,7 +683,7 @@ public void saveImageToFile(byte[] imageBytes, String fileName)
     }
 
 
-    public String[][] getReportsByOfficerCNIC(String officerCnic) {
+    public String[][] getReportsByOfficerCNIC(String officerCnic, boolean h) {
         String[][] reports = new String[100][3];
         int index = 0; // To track the next available row in the array
 
@@ -726,19 +726,25 @@ public void saveImageToFile(byte[] imageBytes, String fileName)
                     }
                 }
             }
-
-            // Query the case reports assigned to the officer
-            try (PreparedStatement caseReportStatement = connection.prepareStatement(caseReportQuery)) {
-                caseReportStatement.setString(1, officerCnic);
-                try (ResultSet resultSet = caseReportStatement.executeQuery()) {
-                    while (resultSet.next() && index < reports.length) {
-                        reports[index][0] = String.valueOf(resultSet.getInt("id")); // ID
-                        reports[index][1] = resultSet.getString("type"); // Type
-                        reports[index][2] = "Description: " + resultSet.getString("description") +
-                                ", Incident Location: " + resultSet.getString("incident_location"); // Details
-                        index++;
+            if (h) {
+                // Query the case reports assigned to the officer
+                try (PreparedStatement caseReportStatement = connection.prepareStatement(caseReportQuery)) {
+                    caseReportStatement.setString(1, officerCnic);
+                    try (ResultSet resultSet = caseReportStatement.executeQuery()) {
+                        while (resultSet.next() && index < reports.length) {
+                            reports[index][0] = String.valueOf(resultSet.getInt("id")); // ID
+                            reports[index][1] = resultSet.getString("type"); // Type
+                            reports[index][2] =
+                                    "Description: "
+                                            + resultSet.getString("description")
+                                            + ", Incident Location: "
+                                            + resultSet.getString("incident_location"); // Details
+                            index++;
+                        }
                     }
                 }
+
+
             }
         } catch (SQLException e) {
             e.printStackTrace(); // Log the exception

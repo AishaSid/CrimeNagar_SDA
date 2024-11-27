@@ -168,8 +168,8 @@ public class BLConnector {
     return connector.getReportsByCNIC(cnic);
   }
 
-  public String[][] getReportsByOfficerCNIC(String cnic) {
-    return connector.getReportsByOfficerCNIC(cnic);
+  public String[][] getReportsByOfficerCNIC(String cnic,boolean h) {
+    return connector.getReportsByOfficerCNIC(cnic,h);
   }
 
   public MissingPerson showMPDetails(int id) {

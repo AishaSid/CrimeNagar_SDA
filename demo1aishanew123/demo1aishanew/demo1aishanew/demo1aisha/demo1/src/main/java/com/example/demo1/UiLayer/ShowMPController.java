@@ -71,7 +71,7 @@ public class ShowMPController
             AnchorPane root = loader.load();
 
             UpdateCaseStatusController a = loader.getController();
-            a.receiveMessage(cnic);
+            a.receiveMessage(cnic,true);
             Stage stage = (Stage) backButton.getScene().getWindow();
             Scene scene = new Scene(root);
             stage.setScene(scene);

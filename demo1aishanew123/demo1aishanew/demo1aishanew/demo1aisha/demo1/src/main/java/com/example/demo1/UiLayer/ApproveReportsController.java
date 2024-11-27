@@ -15,6 +15,9 @@ import java.io.IOException;
 
 public class ApproveReportsController {
 
+    @FXML
+    private Label actionMessageLabel;
+
     public Button backButton;
     public Button reportCrimeButton;
     private String cnic;
@@ -80,7 +83,10 @@ public class ApproveReportsController {
 
     @FXML
     public void initializeReportViewList() {
-        String department = blConnector.fetchGenericColumn(cnic, "department"); // Fetch officer's department
+        filterComboBox.setPromptText("Crime Type");
+        // Fetch officer's department
+        String department = blConnector.fetchGenericColumn(cnic, "department");
+        // Fetch selected crime type from ComboBox
         String selectedCrimeType = filterComboBox.getValue();
 
         if (selectedCrimeType == null || selectedCrimeType.isEmpty()) {
@@ -88,17 +94,21 @@ public class ApproveReportsController {
             return;
         }
 
+        // Get pending reports
         ObservableList<String> pendingReports = FXCollections.observableArrayList(
                 blConnector.getPendingReports(department, selectedCrimeType)
         );
 
         if (pendingReports.isEmpty()) {
-            showAlert(Alert.AlertType.INFORMATION, "No Reports", "No reports found for the selected crime type.");
+            // If no reports, show "No reports found" in the ListView
+            pendingReports.add("No reports found for the selected crime type.");
         }
 
+        // Update the ListView with the pending reports or placeholder message
         allReports.setAll(pendingReports);
         reportListView.setItems(pendingReports);
     }
+
 
     private void showReportDetails(String report) {
         detailsVBox.setVisible(true);
@@ -117,30 +127,28 @@ public class ApproveReportsController {
 
     private void handleReportAction(String action, String newStatus) {
         String selectedReport = reportListView.getSelectionModel().getSelectedItem();
-        String selectedOfficerCnic = officerComboBox.getSelectionModel().getSelectedItem(); // Directly fetch CNIC
-        String selectedCrimeType = filterComboBox.getValue(); // Crime type selected by user
+        String selectedOfficerCnic = officerComboBox.getSelectionModel().getSelectedItem();
+        String selectedCrimeType = filterComboBox.getValue();
 
         if (selectedReport != null && selectedOfficerCnic != null && selectedCrimeType != null) {
-            // Extract the report ID
             String caseId = extractCaseId(selectedReport);
 
-            if (caseId != null && selectedOfficerCnic != null) {
+            if (caseId != null) {
                 boolean success;
                 if ("Missing Person".equalsIgnoreCase(selectedCrimeType)) {
-                    // Update Missing Person status and assign the case
                     success = blConnector.updateMissingPersonStatus(caseId, newStatus) &&
                             blConnector.assignMissingPersonCase(selectedOfficerCnic, caseId);
                 } else {
-                    // Update Case Report status and assign the case
                     success = blConnector.updateReportStatus(caseId, newStatus) &&
                             blConnector.assignCaseReport(selectedOfficerCnic, caseId);
                 }
 
                 if (success) {
                     allReports.remove(selectedReport);
-                    reportListView.setItems(allReports); // Update ListView after removal
-                    showAlert(Alert.AlertType.INFORMATION, action, "Report " + action.toLowerCase() + ": " + selectedReport);
-                } else {
+                    reportListView.setItems(allReports);
+                    // Update the label instead of showing an alert
+                    actionMessageLabel.setText("Report " + action.toLowerCase() + ": " + selectedReport);
+                }  else {
                     showAlert(Alert.AlertType.ERROR, "Error", "Failed to update the report or assign the case.");
                 }
             } else {
@@ -151,8 +159,7 @@ public class ApproveReportsController {
         }
     }
 
-
-
+    
     private String extractCaseId(String report) {
         // Assumes report format is "ID: <id>, Description: ... "
         String[] parts = report.split(",");

@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.FileOutputStream;
 import java.sql.*;
 
+import com.example.demo1.BusinessLogic.Actors.Feedback;
 import com.example.demo1.BusinessLogic.Actors.Officer;
 import com.example.demo1.BusinessLogic.Actors.User;
 import com.example.demo1.BusinessLogic.Reports.Case;
@@ -261,7 +262,6 @@ public class db
         }
     }
 
-    public void storeFeedback(){}
 
     // for history
     public void retrieveAllReports(){}
@@ -337,14 +337,14 @@ public void saveImageToFile(byte[] imageBytes, String fileName)
         }
     }
 
-    public void storeFeedback(String cnic, String feedback) {
+    public void storeFeedback(Feedback fb) {
         // SQL query to insert feedback into the Feedback table
         String query = "INSERT INTO Feedback (citizen_id, feedback_text) VALUES (?, ?)";
 
         try (PreparedStatement preparedStatement = connection.prepareStatement(query)) {
             // Set the citizen_id (cnic) and feedback_text parameters
-            preparedStatement.setString(1, cnic); // Assuming cnic is the citizen_id
-            preparedStatement.setString(2, feedback); // Set the feedback text
+            preparedStatement.setString(1, fb.getUsercnic()); // Assuming cnic is the citizen_id
+            preparedStatement.setString(2, fb.getDescription()); // Set the feedback text
 
             // Execute the insert statement
             int rowsAffected = preparedStatement.executeUpdate();

@@ -1,6 +1,7 @@
 package com.example.demo1.BusinessLogic;
 
 import com.example.demo1.BusinessLogic.Actors.Citizen;
+import com.example.demo1.BusinessLogic.Actors.Feedback;
 import com.example.demo1.BusinessLogic.Actors.Officer;
 import com.example.demo1.BusinessLogic.Actors.User;
 import com.example.demo1.BusinessLogic.Reports.Case;
@@ -176,12 +177,10 @@ public class UiConnector
 
     }
 
-    public void insertFeedback(String cnic, String feedback) {
+    public void insertFeedback(Feedback fb) {
         // Logic to store feedback in the database (e.g., using JDBC or any database connection method)
         System.out.println("Inserting feedback into the database...");
-        System.out.println("CNIC: " + cnic);
-        System.out.println("Feedback: " + feedback);
-        db.storeFeedback(cnic,feedback);
+        db.storeFeedback(fb);
         // Example: Assuming you have a database class to interact with
         // DatabaseHandler.insertFeedbackToDB(cnic, feedback);
     }

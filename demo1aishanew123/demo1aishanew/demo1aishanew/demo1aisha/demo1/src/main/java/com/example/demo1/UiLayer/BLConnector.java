@@ -1,5 +1,6 @@
 package com.example.demo1.UiLayer;
 
+import com.example.demo1.BusinessLogic.Actors.Feedback;
 import com.example.demo1.BusinessLogic.Reports.Case;
 import com.example.demo1.BusinessLogic.Reports.MissingPerson;
 import com.example.demo1.BusinessLogic.UiConnector;
@@ -116,7 +117,8 @@ public class BLConnector {
 
   public void submitFeedback(String cnic, String feedback) {
     // Forward the feedback data to UIConnector for database handling
-    connector.insertFeedback(cnic, feedback);
+      Feedback fb = new Feedback(cnic, feedback);
+    connector.insertFeedback(fb);
   }
 
   public void ConfirmPerson(

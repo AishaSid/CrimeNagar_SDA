@@ -62,7 +62,7 @@ public class historyController {
         newVBox.setPrefHeight(68.0);
         newVBox.setPrefWidth(244.0); // Adjusted to account for side margins
         newVBox.setStyle("-fx-background-color: #e8e8e8; -fx-border-radius: 10; -fx-background-radius: 10;");
-        newVBox.setPadding(new Insets(10, 10, 10, 10)); // Keep consistent padding
+        newVBox.setPadding(new Insets(5, 5, 5, 5)); // Keep consistent padding
         VBox.setMargin(newVBox, new Insets(10, 8, 5, 8)); // Adjusted side margins to fit 260 total
 
 
